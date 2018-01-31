@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 var fs = require('fs')
 var dirName = process.argv[2]
-var isExits=fs.existsSync(dirName)
-	if(isExits){
+var exit=fs.existsSync(dirName)
+	if(exit)
+	{
 		console.log("error: dir exists")
 		process.exit(1);			
-	}else{
+	}
+	else{
  		fs.mkdirSync("./" + dirName) 
 		process.chdir("./" + dirName) 
 		fs.mkdirSync('css') 
